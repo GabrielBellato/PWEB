@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 13 Gabriel Silva Bellato</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        img {
+            width: 300px;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #consertarContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="status">A janela está fechada</h1>
+
+    <div id="consertarContainer">
+        <button onclick="consertarJanela()">Consertar Janela</button>
+        <p>Clica aqui pra consertar, vai</p>
+    </div>
+
+    <img 
+        id="janela" 
+        src="janelaFechada.Jfif" 
+        alt="Janela Fechada"
+        onmouseover="abrirJanela()" 
+        onmouseout="fecharJanela()" 
+        onclick="quebrarJanela()"
+    >
+
+    <script>
+        let janelaImg = document.getElementById("janela");
+        let statusTexto = document.getElementById("status");
+        let quebrada = false;
+        let consertarContainer = document.getElementById("consertarContainer");
+
+        function abrirJanela() {
+            if (!quebrada) {
+                janelaImg.src = "janelaAberta.Jfif";
+                statusTexto.textContent = "A janela está aberta";
+            }
+        }
+
+        function fecharJanela() {
+            if (!quebrada) {
+                janelaImg.src = "janelaFechada.Jfif";
+                statusTexto.textContent = "A janela está fechada";
+            }
+        }
+
+        function quebrarJanela() {
+            janelaImg.src = "janelaQuebrada.Jfif";
+            statusTexto.textContent = "Você clicou forte demais e quebrou a janela, parabéns!";
+            quebrada = true;
+            consertarContainer.style.display = "block";
+        }
+
+        function consertarJanela() {
+            quebrada = false;
+            janelaImg.src = "janelaFechada.Jfif";
+            statusTexto.textContent = "A janela está fechada";
+            consertarContainer.style.display = "none"; 
+        }
+    </script>
+
+</body>
+</html>
