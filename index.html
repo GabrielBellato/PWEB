@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Controle de Filmes</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div id="tela-lista">
+      <h2>Meus Filmes Assistidos</h2>
+      <input
+        type="text"
+        id="pesquisa"
+        placeholder="Pesquisar pelo título na sua lista"
+        onkeyup="pesquisarFilmes()"
+      />
+      <button class="btn-primary" onclick="mostrarTela('tela-busca-api')">Adicionar Novo Filme</button>
+      <ul id="lista-filmes" class="lista-filmes"></ul>
+    </div>
+
+    <div id="tela-busca-api" style="display:none;">
+      <h2>Buscar Filme Online</h2>
+      <div class="form-busca">
+        <input type="text" id="busca-api-input" placeholder="Digite o título do filme" />
+        <button class="btn-primary" onclick="buscarFilmesNaApi()">Buscar</button>
+      </div>
+    
+      <div id="resultados-api" class="lista-filmes"></div>
+    
+      <button class="btn-secondary" type="button" onclick="mostrarTela('tela-lista')">Voltar para Minha Lista</button>
+    </div>
+
+    <div id="tela-cadastro" style="display:none;">
+      <h2>Adicionar Filme Manualmente</h2>
+      <form id="form-cadastro" onsubmit="event.preventDefault(); adicionarFilme();">
+        <label>Título:<br /><input id="titulo" required /></label><br />
+        <label>Diretor:<br /><input id="diretor" required /></label><br />
+        <label>Ano:<br /><input type="number" id="ano" required /></label><br />
+        <label>Gênero:<br /><input id="genero" /></label><br />
+        <label>Duração (min):<br /><input type="number" id="duracao" /></label><br />
+        <label>Elenco:<br /><input id="elenco" /></label><br />
+        <label>Classificação:<br /><input id="classificacao" /></label><br />
+        <label>Sinopse:<br /><textarea id="sinopse"></textarea></label><br />
+        <label>Nota do Usuário:<br /><input type="number" step="0.1" min="0" max="5" id="notaUsuario" /></label><br />
+        <button class="btn-primary" type="submit">Salvar</button>
+        <button class="btn-secondary" type="button" onclick="mostrarTela('tela-lista')">Cancelar</button>
+      </form>
+    </div>
+
+    <div id="tela-edicao" style="display:none;">
+      <h2>Editar Filme</h2>
+      <form id="form-edicao" onsubmit="event.preventDefault(); salvarEdicao();">
+        <input type="hidden" id="edit-id" />
+        <label>Título:<br /><input id="edit-titulo" required /></label><br />
+        <label>Diretor:<br /><input id="edit-diretor" required /></label><br />
+        <label>Ano:<br /><input type="number" id="edit-ano" required /></label><br />
+        <label>Gênero:<br /><input id="edit-genero" /></label><br />
+        <label>Duração (min):<br /><input type="number" id="edit-duracao" /></label><br />
+        <label>Elenco:<br /><input id="edit-elenco" /></label><br />
+        <label>Classificação:<br /><input id="edit-classificacao" /></label><br />
+        <label>Sinopse:<br /><textarea id="edit-sinopse"></textarea></label><br />
+        <label>Nota do Usuário:<br /><input type="number" step="0.1" min="0" max="5" id="edit-notaUsuario" /></label><br />
+        <button class="btn-primary" type="submit">Salvar</button>
+        <button class="btn-secondary" type="button" onclick="mostrarTela('tela-lista')">Cancelar</button>
+      </form>
+    </div>
+
+    <div id="tela-visualizacao" style="display:none;">
+      <h2>Detalhes do Filme</h2>
+      <img id="ver-poster" src="" alt="Pôster do Filme" style="max-width: 150px; border-radius: 8px; display: block; margin: 0 auto 20px;">
+      <p><strong>Título:</strong> <span id="ver-titulo"></span></p>
+      <p><strong>Diretor:</strong> <span id="ver-diretor"></span></p>
+      <p><strong>Ano:</strong> <span id="ver-ano"></span></p>
+      <p><strong>Gênero:</strong> <span id="ver-genero"></span></p>
+      <p><strong>Duração:</strong> <span id="ver-duracao"></span></p>
+      <p><strong>Elenco:</strong> <span id="ver-elenco"></span></p>
+      <p><strong>Classificação:</strong> <span id="ver-classificacao"></span></p>
+      <p><strong>Sinopse:</strong> <span id="ver-sinopse"></span></p>
+      <p><strong>Nota do Usuário:</strong> <span id="ver-notaUsuario"></span></p>
+      <p><strong>Data da Adição:</strong> <span id="ver-dataAdicao"></span></p>
+      <button class="btn-secondary" onclick="mostrarTela('tela-lista')">Voltar</button>
+    </div>
+
+  </div>
+
+  <script src="JS/script.js"></script>
+</body>
+</html>
