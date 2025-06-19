@@ -1,0 +1,81 @@
+/* Estilo para o div que vai mudar de cor */
+.color-box {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+h2 {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 420px) {
+    .color-box {
+        background-color: gray;
+    }
+    h2::after {
+        content: "Cinza";
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .color-box {
+        background-color: orange;
+    }
+    h2::after {
+        content: "Laranja";
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .color-box {
+        background-color: pink;
+    }
+    h2::after {
+        content: "Rosa";
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1080px) {
+    .color-box {
+        background-color: lightcoral;
+    }
+    h2::after {
+        content: "Vermelho Claro";
+    }
+}
+
+@media (min-width: 1081px) and (max-width: 1366px) {
+    .color-box {
+        background-color: purple;
+    }
+    h2::after {
+        content: "Roxo";
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .color-box {
+        background-color: yellow;
+    }
+    h2::after {
+        content: "Amarelo";
+    }
+}
+
+@media (min-width: 1921px) {
+    .color-box {
+        background-color: green;
+    }
+    h2::after {
+        content: "Verde";
+    }
+}

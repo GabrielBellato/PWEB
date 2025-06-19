@@ -1,0 +1,68 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Cabeçalho */
+h1 {
+    color: #005e7d; /* Cor padrão da Fatec Sorocaba */
+    font-size: 2em;
+}
+
+/* Estilo do label e da caixa de seleção */
+label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #005e7d;
+    border-radius: 4px;
+    outline: none;
+}
+
+select:hover {
+    border-color: #003b4d;
+}
+
+/* Janela de curso (caso seja aberta) */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #e9f0f7;
+}
+
+/* Estilo para a nova janela */
+h1 {
+    color: #005e7d;
+    text-align: center;
+}
+
+button {
+    background-color: #005e7d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003b4d;
+}

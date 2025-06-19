@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 14 Gabriel Silva Bellato</title>
+    <script>
+        function transformarTexto() {
+            var texto = document.forms["formulario1"].elements["textoInput"].value;
+            
+            if (document.forms["formulario1"].elements["opcao"][0].checked) {
+                document.forms["formulario1"].elements["textoInput"].value = texto.toUpperCase();
+            } else if (document.forms["formulario1"].elements["opcao"][1].checked) {
+                document.forms["formulario1"].elements["textoInput"].value = texto.toLowerCase();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form name="formulario1">
+        <div>
+            <label for="textoInput">Digite algo:</label>
+            <input type="text" name="textoInput" id="textoInput">
+        </div>
+
+        <div>
+            <label>
+                <input type="radio" name="opcao" value="maiuscula" onclick="transformarTexto()"> Maiúsculas
+            </label>
+            <label>
+                <input type="radio" name="opcao" value="minuscula" onclick="transformarTexto()"> Minúsculas
+            </label>
+        </div>
+    </form>
+
+</body>
+</html>
