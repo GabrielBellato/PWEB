@@ -102,7 +102,7 @@ button {
 }
 
 .lista-filmes .btn-ver {
-  background-color: #27ae60; /* verde */
+  background-color: #27ae60;
   color: white;
 }
 
@@ -111,7 +111,7 @@ button {
 }
 
 .lista-filmes .btn-editar {
-  background-color: #2980b9; /* azul */
+  background-color: #2980b9; 
   color: white;
 }
 
@@ -120,7 +120,7 @@ button {
 }
 
 .lista-filmes .btn-excluir {
-  background-color: #c0392b; /* vermelho */
+  background-color: #c0392b; 
   color: white;
 }
 
@@ -171,73 +171,59 @@ button {
   white-space: nowrap;
 }
 
-/* =====================================================================
-   REGRAS DE RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
-   ===================================================================== */
-
+   /*REGRAS DE RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
 @media (max-width: 600px) {
-  /* Diminui o espaçamento interno do container principal */
   .container {
     padding: 15px;
   }
 
   h2 {
-    font-size: 1.5rem; /* Diminui um pouco o título principal */
+    font-size: 1.5rem;
   }
 
-  /* --- AJUSTES NA LISTA DE FILMES PRINCIPAL E NA BUSCA DA API --- */
-
-  /* Empilha os itens da lista principal verticalmente */
   .lista-filmes li {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px; /* Adiciona um espaço entre os itens empilhados */
+    gap: 12px; 
   }
 
-  /* Faz o mesmo para os resultados da busca da API */
   .resultado-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
   
-  /* Ajusta as imagens da lista para não ficarem tão pequenas e centralizadas */
   .lista-filmes li img, 
   .resultado-item img {
-    width: 80px; /* Garante um tamanho razoável */
-    margin: 0; /* Remove margens desnecessárias */
+    width: 80px; 
+    margin: 0; 
   }
 
   .lista-filmes .botoes-acao,
   .resultado-info {
-    width: 100%; /* Faz o container dos botões/info ocupar toda a largura */
+    width: 100%; 
   }
   
-  /* Faz os botões da lista (Ver, Editar, Excluir) dividirem o espaço */
   .botoes-acao {
     display: flex;
-    gap: 8px; /* Espaço entre os botões */
+    gap: 8px; 
   }
 
   .botoes-acao button {
-    flex-grow: 1; /* Faz com que os 3 botões cresçam e ocupem o espaço por igual */
-    width: auto;   /* Reseta a largura para automática */
-    margin: 0;     /* Remove margens desnecessárias */
+    flex-grow: 1; 
+    width: auto;   
+    margin: 0;     
   }
   
-  /* --- AJUSTES NOS BOTÕES GERAIS E FORMULÁRIOS --- */
-  
-  /* Faz os botões de ação principais ocuparem 100% da largura */
   #tela-lista > .btn-primary,
   #tela-busca-api > .btn-secondary,
   form button {
     width: 100%;
-    padding: 12px; /* Deixa os botões maiores e mais fáceis de tocar */
+    padding: 12px; 
     margin-right: 0;
     margin-left: 0;
   }
 
-  /* Ajusta o poster na tela de detalhes */
   #ver-poster {
     width: 50%;
     max-width: 180px;
